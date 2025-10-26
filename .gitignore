@@ -1,0 +1,10 @@
+
+# Visual Studio
+.vs/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+**/bin/
+**/obj/

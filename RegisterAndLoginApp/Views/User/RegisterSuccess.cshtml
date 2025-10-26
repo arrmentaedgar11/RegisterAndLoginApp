@@ -1,0 +1,25 @@
+﻿
+@model RegisterAndLoginApp.Models.UserModel
+
+@{
+    ViewData["Title"] = "Registration Successful";
+}
+
+<h2>Registration Successful</h2>
+<p>Your account has been created.</p>
+
+<dl class="row">
+    <dt class="col-sm-2">Id</dt>
+    <dd class="col-sm-10">@Model.Id</dd>
+
+    <dt class="col-sm-2">Username</dt>
+    <dd class="col-sm-10">@Model.Username</dd>
+
+    <dt class="col-sm-2">Groups</dt>
+    <dd class="col-sm-10">@Model.Groups</dd>
+</dl>
+
+<p>
+    <a asp-action="Index">Go to Login</a> |
+    <a asp-action="MembersOnly">Members Only</a>
+</p>

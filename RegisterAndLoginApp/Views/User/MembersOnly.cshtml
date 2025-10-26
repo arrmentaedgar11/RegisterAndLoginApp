@@ -1,0 +1,30 @@
+﻿
+@using ServiceStack.Text
+@{
+    ViewData["Title"] = "Private Club";
+}
+
+<h1>Private Club</h1>
+<p>Welcome to the private club</p>
+
+@{
+   
+    var userJson = Context.Session.GetString("User");
+
+    if (string.IsNullOrEmpty(userJson))
+    {
+        <p>You are not logged in.</p>
+    }
+    else
+    {
+        var user = JsonSerializer.DeserializeFromString<RegisterAndLoginApp.Models.UserModel>(userJson);
+
+        <p>You are logged in as <strong>@user.Username</strong></p>
+
+       
+        <p><em>Session JSON:</em></p>
+        <pre>@userJson</pre>
+    }
+}
+
+<p><a asp-action="Logout">Logout</a></p>

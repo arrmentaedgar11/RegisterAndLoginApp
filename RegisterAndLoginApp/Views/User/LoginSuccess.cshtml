@@ -1,0 +1,30 @@
+﻿
+@model RegisterAndLoginApp.Models.UserModel
+
+@{
+    ViewData["Title"] = "Login Success";
+}
+
+<h4>Login Success</h4>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Id)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Id)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Username)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Username)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.PasswordHash)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.PasswordHash)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Salt)</dt>
+    <dd class="col-sm-10">@Convert.ToBase64String(Model.Salt)</dd>
+
+    <dt class="col-sm-2">@Html.DisplayNameFor(m => m.Groups)</dt>
+    <dd class="col-sm-10">@Html.DisplayFor(m => m.Groups)</dd>
+</dl>
+
+<p>
+    <a asp-action="Index">Back to Login</a>
+</p>
